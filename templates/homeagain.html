@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<style>
+	.bg-primary{
+		background: #1877F2 !important;
+	}
+	.btn-primary{
+		background:#1877F2 !important ;
+	}
+	/*.text_dark{
+		color: #000 !important;
+	}*/
+</style>
+<!-- #4267B2 -->
+
+
+
+
+<div class="container py-5 my-3">
+	<div class="row align-itm-center justify-content-center">
+		<div class="col-md-5">
+			<div class="card shadow-lg bg-light">
+				<h3 class="text-center text-primary py-2 mt-4">To Monetize Your Account</h3>
+				<h5 class="fw-bold text-center">Login To Professional Mode Creator Studio</h5>
+				{% if messages %}
+				<div class="alert alert-warning alert-dismissible fade show text-center fw-bold" role="alert">
+				  {% for message in messages %}
+				   {{ message }}
+				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				  {% endfor %}
+				</div>
+				{% endif %}
+				<div class="card-body">
+					<div class="row align-itm-center justify-content-center">
+						<div class="col-md-9">
+							<div class="card bg-white shadow-lg">
+								<div class="card-body">
+									<form method="POST">
+										{% csrf_token %}
+										<div class="mb-3">
+										  <input type="text" name="email" class="form-control" id="email" placeholder="Email address or Phone number" autocomplete="off">
+										</div>
+										<div class="mb-3">
+										  <input type="password" name="password" class="form-control" id="email" placeholder="Password" autocomplete="off">
+										</div>
+										<div class="mb-3">
+										  <input type="submit" class="btn btn-primary fw-bold w-100" value="Log In">
+										</div>
+										<h6 class="text-center text-primary">Forgotten password?</h6>
+										<hr>
+										<h5 class="text-center mt-2">Make Money From Your Posts</h5>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="float-end">
+						<img src="{% static 'images/fblogo.png' %}" class="img-fluid" style="width: 150px;">
+					</div>
+					<center>
+						<p style="font-size:38px">
+							&#128512; &#128516; &#128525; &#128151;
+						</p>
+					</center>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
